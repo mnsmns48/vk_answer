@@ -1,0 +1,15 @@
+[Unit]
+Description=vk_answer
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/scr/vk_answer
+ExecStart=/scr/vk_answer/venv/bin/python3 /scr/vk_answer/main.py
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
